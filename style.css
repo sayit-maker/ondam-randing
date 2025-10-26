@@ -1,0 +1,122 @@
+/* 기본 세팅 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Pretendard', sans-serif;
+  background-color: #faf9f7;
+  color: #2e4639;
+  overflow-x: hidden;
+}
+a { text-decoration: none; color: inherit; }
+
+/* HEADER */
+header {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: transparent;
+  transition: background 0.3s, box-shadow 0.3s;
+  z-index: 10;
+}
+header.scrolled {
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.logo {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+nav a {
+  margin-left: 20px;
+  font-size: 1rem;
+}
+nav .cta {
+  padding: 8px 14px;
+  background: #2e4639;
+  color: #fff;
+  border-radius: 4px;
+}
+
+/* HERO SECTION */
+#hero {
+  height: 100vh;
+  background: url('main.jpg') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+.hero-content h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+.hero-content p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+.hero-content button {
+  margin-top: 30px;
+  padding: 12px 26px;
+  background: #fff;
+  color: #2e4639;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* SECTIONS */
+section {
+  padding: 120px 10%;
+  text-align: center;
+}
+h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+.room-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.room-gallery img {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* FOOTER */
+footer {
+  padding: 60px 10%;
+  background: #2e4639;
+  color: #fff;
+  text-align: center;
+}
+footer .sns a {
+  color: #c7e0d1;
+  margin: 0 6px;
+}
+
+/* ANIMATION */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  header { padding: 20px; }
+  .hero-content h1 { font-size: 2.2rem; }
+  .room-gallery img { width: 90%; }
+}
