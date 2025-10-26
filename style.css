@@ -14,30 +14,28 @@ header {
   top: 0; left: 0;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* 로고 왼쪽, 버튼 오른쪽 */
   align-items: center;
   padding: 20px 60px;
   background: transparent;
   transition: background 0.3s, box-shadow 0.3s;
   z-index: 10;
 }
-header.scrolled {
-  background: rgba(255,255,255,0.9);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+/* ✅ nav만 화면 정중앙에 고정 */
+nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 30px;
+  font-weight: 500;
 }
+
+/* 로고 */
 .logo {
   font-size: 1.4rem;
   font-weight: 600;
-}
-nav a {
-  margin-left: 20px;
-  font-size: 1rem;
-}
-nav .cta {
-  padding: 8px 14px;
-  background: #2e4639;
-  color: #fff;
-  border-radius: 4px;
 }
 
 /* HERO SECTION */
