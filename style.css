@@ -104,27 +104,38 @@ nav a:not(:last-child)::after {
 }
 
 
-/* SECTIONS */
+/* =======================
+   🌿 SECTIONS (공통)
+======================= */
 section {
   padding: 120px 10%;
   text-align: center;
 }
+
+/* 섹션 제목 스타일 */
 h2 {
   font-size: 2rem;
   margin-bottom: 30px;
 }
-.room-gallery {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.room-gallery img {
-  width: 300px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+/* =======================
+   🌈 SECTION별 배경색
+======================= */
+#branding {
+  background-color: #f9f9f7; /* 부드러운 크림톤 */
 }
 
+#owner {
+  background-color: #edf1ee; /* 은은한 그린빛 톤 */
+}
+
+#features {
+  background-color: #e3ebe6; /* 톤 다운된 베이지 */
+}
+
+#pricing {
+  background-color: #d8e1dc; /* 가장 진한 자연톤 */
+}
 
 
 /* ✅ 하단 고정 배너 */
