@@ -11,16 +11,52 @@ a { text-decoration: none; color: inherit; }
 /* HEADER */
 header {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 80px; /* 원하는 높이 */
   display: flex;
-  justify-content: space-between; /* 로고 왼쪽, 버튼 오른쪽 */
+  justify-content: space-between;
   align-items: center;
-  padding: 20px 60px;
-  background: transparent;
-  transition: background 0.3s, box-shadow 0.3s;
-  z-index: 10;
+  padding: 0 10%;
+  z-index: 100;
+  background-image: url("img/header-bg.jpg"); /* ✅ 배경 이미지 경로 */
+  background-size: cover; /* 이미지가 꽉 차도록 */
+  background-position: center; /* 중앙 정렬 */
+  background-repeat: no-repeat;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* 약한 그림자 효과 */
 }
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 24px;
+  color: #2e4639;
+}
+
+header img {
+  height: 40px;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  font-weight: 500;
+}
+
+header nav a {
+  color: #2e4639;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+header nav a:hover {
+  opacity: 0.6;
+}
+
 
 /* ✅ nav만 화면 정중앙에 고정 */
 nav {
@@ -52,14 +88,26 @@ nav a:not(:last-child)::after {
 
 /* 로고 */
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* 글자와 로고 사이 간격 */
   font-size: 1.4rem;
   font-weight: 600;
+  color: #2e4639; /* 온담 시그니처 컬러 */
 }
+
+.logo img {
+  height: 28px; /* 로고 크기 조절 */
+  width: auto;
+}
+
 
 /* HERO SECTION */
 #hero {
-  height: 100vh;
-  background: url('img/hero-background.jpg') center top no-repeat;
+  height: 80vh;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), /* 어둡게 오버레이 */
+    url('img/hero-background.jpg') center center / cover no-repeat;
   background-size: cover;
   background-attachment: fixed; /* 스크롤 시 고정 효과 */
   display: flex;
@@ -139,3 +187,137 @@ footer .sns a {
   .hero-content h1 { font-size: 2.2rem; }
   .room-gallery img { width: 90%; }
 }
+
+/* ✅ 하단 고정 배너 */
+.bottom-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1100px;
+  background: rgba(46, 70, 57, 0.9); /* ✅ 반투명 (0.9는 90%) */
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  z-index: 9999;
+  backdrop-filter: blur(4px); /* ✅ 유리 느낌 (선택사항) */
+}
+
+
+.bottom-banner p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.bottom-banner span {
+  opacity: 0.8;
+  margin-left: 5px;
+}
+
+.bottom-banner .cta-btn {
+  background: #fff;
+  color: #2e4639;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.bottom-banner .cta-btn:hover {
+  background: #e8e8e8;
+}
+
+.footer {
+  background: #1d1d1b;
+  color: #fff;
+  padding: 60px 10%;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-left {
+  flex: 1;
+}
+
+.footer-logo {
+  height: 40px;
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+
+.footer-slogan {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-top: 10px;
+}
+
+.footer-info h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  opacity: 0.8;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: #fff;
+  color: #2e4639;
+}
+
+.social-links .youtube:hover {
+  color: #ff0000;
+}
+
+.social-links .instagram:hover {
+  color: #e1306c;
+}
+
+.social-links .tiktok:hover {
+  color: #000000;
+}
+
+.social-links .naver:hover {
+  color: #1ec800;
+}
+

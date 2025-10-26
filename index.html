@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>온담 펜션 | 따뜻함을 담다</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="img/favicon1.png" />
   </head>
   <body>
     <!-- 🔝 HEADER -->
     <header>
-      <div class="logo">ONDAM</div>
+      <div class="logo">
+        <img src="img/logo.png" alt="온담 로고" />
+        ONDAM
+      </div>
+
       <nav>
         <a href="#home">Home</a>
         <a href="#space">Space</a>
@@ -52,13 +57,73 @@
     </section>
 
     <!-- 🔚 FOOTER -->
-    <footer>
-      <p>© 2025 온담 펜션 | 문의: ondam@example.com</p>
-      <div class="sns">
-        <a href="#">Instagram</a> |
-        <a href="#">YouTube</a>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-left">
+          <img src="img/logo.png" alt="온담 로고" class="footer-logo" />
+          <p class="footer-slogan">Not a pension<br />your story</p>
+
+          <div class="social-links">
+            <a
+              href="https://www.youtube.com"
+              target="_blank"
+              class="youtube"
+              aria-label="YouTube"
+            >
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              class="instagram"
+              aria-label="Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.tiktok.com"
+              target="_blank"
+              class="tiktok"
+              aria-label="TikTok"
+            >
+              <i class="fab fa-tiktok"></i>
+            </a>
+            <a
+              href="https://blog.naver.com"
+              target="_blank"
+              class="naver"
+              aria-label="Naver Blog"
+            >
+              <i class="fab fa-neos"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-info">
+          <div>
+            <h4>온담 펜션</h4>
+            <p>대표자명 | 김온담</p>
+            <p>주소 | 강원도 홍천군 온담로 123</p>
+            <p>사업자등록번호 | 123-45-67890</p>
+            <p>연락처 | 010-1234-5678</p>
+            <p>운영시간 | 오전 10시 ~ 오후 6시</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>Copyright©2025 ONDAM All Rights Reserved</p>
       </div>
     </footer>
+
+    <!-- ✅ 하단 고정 배너 -->
+    <div class="bottom-banner">
+      <p>
+        비즈니스 PT 수익화 트레이닝, 지금 신청하세요!
+        <span>(신청 후 불만족 시 100% 환불)</span>
+      </p>
+      <button class="cta-btn">지금 예약하기</button>
+    </div>
 
     <script src="script.js"></script>
   </body>

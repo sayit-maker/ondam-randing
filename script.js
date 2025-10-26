@@ -19,3 +19,19 @@ function showOnScroll() {
 }
 window.addEventListener('scroll', showOnScroll);
 window.addEventListener('load', showOnScroll);
+
+const bottomBanner = document.querySelector('.bottom-banner');
+const footer = document.querySelector('.footer');
+
+window.addEventListener('scroll', () => {
+  const footerTop = footer.getBoundingClientRect().top;
+  const windowHeight = window.innerHeight;
+
+  if (footerTop < windowHeight) {
+    bottomBanner.style.opacity = '0';
+    bottomBanner.style.pointerEvents = 'none';
+  } else {
+    bottomBanner.style.opacity = '1';
+    bottomBanner.style.pointerEvents = 'auto';
+  }
+});
