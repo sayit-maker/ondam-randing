@@ -19,17 +19,15 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 10%;
-  z-index: 100;
+  z-index: 9999;
   background-image: url("img/header-bg.jpg"); /* ✅ 배경 이미지 경로 */
   background-size: cover; /* 이미지가 꽉 차도록 */
   background-position: center; /* 중앙 정렬 */
   background-repeat: no-repeat;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* 약한 그림자 효과 */
-
-  z-index: 9999;
 }
 
-header .logo {
+.logo {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -38,48 +36,34 @@ header .logo {
   color: #2e4639;
 }
 
-header img {
+.logo img {
   height: 40px;
 }
 
-header nav {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  font-weight: 500;
-}
-
-header nav a {
-  color: #2e4639;
-  text-decoration: none;
-  transition: opacity 0.3s;
-}
-
-header nav a:hover {
-  opacity: 0.6;
-}
-
-
-/* ✅ nav만 화면 정중앙에 고정 */
-nav {
+.main-nav {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, 0);
   display: flex;
   align-items: center;
   gap: 60px; /* 버튼 간격 넓히기 */
   font-weight: 500;
 }
 
-nav a {
+.main-nav a {
   text-decoration: none;
   color: #2e4639;
   font-size: 1.1rem;
   position: relative;
+  transition: opacity 0.3s;
+}
+
+.main-nav a:hover {
+  opacity: 0.6;
 }
 
 /* ✅ 메뉴 사이 구분선 | 추가 */
-nav a:not(:last-child)::after {
+.main-nav a:not(:last-child)::after {
   content: "|";
   position: absolute;
   right: -30px; /* 선의 위치 (간격과 맞춰 조절) */
@@ -89,21 +73,6 @@ nav a:not(:last-child)::after {
 
 
 /* 로고 */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* 글자와 로고 사이 간격 */
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #2e4639; /* 온담 시그니처 컬러 */
-}
-
-.logo img {
-  height: 28px; /* 로고 크기 조절 */
-  width: auto;
-}
-
-
 /* SECTIONS */
 section {
   padding: 120px 10%;
@@ -132,7 +101,7 @@ h2 {
   position: fixed;
   bottom: 20px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, 0);
   width: 90%;
   max-width: 1100px;
   background: rgba(46, 70, 57, 0.9); /* ✅ 반투명 (0.9는 90%) */
@@ -145,6 +114,7 @@ h2 {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   z-index: 9999;
   backdrop-filter: blur(4px); /* ✅ 유리 느낌 (선택사항) */
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 
@@ -172,6 +142,23 @@ h2 {
 
 .bottom-banner .cta-btn:hover {
   background: #e8e8e8;
+}
+
+.bottom-banner.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 10px);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ✅ 푸터 전체 */
