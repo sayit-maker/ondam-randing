@@ -22,97 +22,103 @@
       </nav>
     </header>
 
-    <!-- 🏞 HERO SECTION -->
-    <section id="hero">
-      <div class="hero-content fade-in">
-        <h1>온기를 담다</h1>
-        <p>따뜻한 이야기로 채워지는 시간</p>
-        <button onclick="scrollToSection('about')">더 알아보기</button>
+    <!-- 🌿 SECTION 1: 브랜딩 / 온담 소개 / 위치 -->
+    <section id="branding" class="fade-in">
+      <h2>온담을 소개합니다</h2>
+      <p>따뜻함을 담은 공간, 온담 펜션</p>
+      <div class="map-container">
+        <!-- 구글 지도나 네이버지도 iframe 들어갈 자리 -->
       </div>
     </section>
 
-    <!-- 🌿 ABOUT -->
-    <section id="about" class="fade-in">
-      <h2>ABOUT</h2>
-      <p>
-        온담은 일상의 피로를 녹이는 공간입니다.<br />자연과 감성이 머무는 시간을
-        선물합니다.
-      </p>
+    <!-- 👩‍🌾 SECTION 2: 펜션지기 소개 -->
+    <section id="owner" class="fade-in">
+      <h2>펜션지기 소개</h2>
+      <div class="owner-profile">
+        <img src="img/owner.jpg" alt="펜션지기 사진" />
+        <p>
+          안녕하세요, 온담의 펜션지기 김온담입니다.<br />
+          손님 한 분 한 분께 따뜻한 시간을 선물하고 싶습니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- 🏡 SECTION 3: 펜션 장점 소개 -->
+    <section id="features" class="fade-in">
+      <h2>온담의 특별함</h2>
+      <div class="feature-list">
+        <div class="feature">🌲 자연과 함께하는 감성 공간</div>
+        <div class="feature">🛁 전 객실 욕조 / 스파 완비</div>
+        <div class="feature">🔥 개별 바비큐 공간</div>
+        <div class="feature">🚗 전기차 충전기 구비</div>
+      </div>
+    </section>
+
+    <!-- 💸 SECTION 4: 가격, 얼리버드, 우대 조건 -->
+    <section id="pricing" class="fade-in">
+      <h2>가격 및 할인 안내</h2>
+      <div class="price-info">
+        <p>온담은 시즌별, 예약 시점별로 다양한 혜택을 제공합니다.</p>
+        <ul>
+          <li>📅 얼리버드 예약: 최대 20% 할인</li>
+          <li>💳 장기 투숙: 3박 이상 10% 추가 할인</li>
+          <li>🎉 재방문 고객: 전 객실 1만원 할인</li>
+        </ul>
+      </div>
     </section>
 
     <!-- 🏡 ROOMS -->
     <section id="rooms" class="fade-in">
       <h2>ROOMS</h2>
       <div class="room-gallery">
-        <img src="room1.jpg" alt="Room 1" />
-        <img src="room2.jpg" alt="Room 2" />
-        <img src="room3.jpg" alt="Room 3" />
+        <img src="img/room1.jpg" alt="Room 1" />
+        <img src="img/room2.jpg" alt="Room 2" />
+        <img src="img/room3.jpg" alt="Room 3" />
       </div>
-    </section>
-
-    <!-- 📅 RESERVE CTA -->
-    <section id="reserve" class="fade-in">
-      <h2>지금 예약하기</h2>
-      <button>예약 페이지로 이동</button>
     </section>
 
     <!-- 🔚 FOOTER -->
     <footer class="footer">
       <div class="footer-container">
+        <!-- 왼쪽 영역 -->
         <div class="footer-left">
-          <img src="img/logo.png" alt="온담 로고" class="footer-logo" />
-          <p class="footer-slogan">Not a pension<br />your story</p>
-
           <div class="social-links">
-            <a
-              href="https://www.youtube.com"
-              target="_blank"
-              class="youtube"
-              aria-label="YouTube"
-            >
-              <i class="fab fa-youtube"></i>
-            </a>
+            <a href="https://www.youtube.com" target="_blank" class="youtube"
+              ><i class="fab fa-youtube"></i
+            ></a>
             <a
               href="https://www.instagram.com"
               target="_blank"
               class="instagram"
-              aria-label="Instagram"
-            >
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a
-              href="https://www.tiktok.com"
-              target="_blank"
-              class="tiktok"
-              aria-label="TikTok"
-            >
-              <i class="fab fa-tiktok"></i>
-            </a>
-            <a
-              href="https://blog.naver.com"
-              target="_blank"
-              class="naver"
-              aria-label="Naver Blog"
-            >
-              <i class="fab fa-neos"></i>
-            </a>
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://www.tiktok.com" target="_blank" class="tiktok"
+              ><i class="fab fa-tiktok"></i
+            ></a>
+            <a href="https://blog.naver.com" target="_blank" class="naver"
+              ><i class="fab fa-neos"></i
+            ></a>
+          </div>
+
+          <div class="footer-logo-area">
+            <img src="img/favicon.png" alt="온담 로고" class="footer-logo" />
+            <p class="footer-slogan">Not a pension<br />your story</p>
           </div>
         </div>
 
-        <div class="footer-info">
-          <div>
-            <h4>온담 펜션</h4>
-            <p>대표자명 | 김온담</p>
-            <p>주소 | 강원도 홍천군 온담로 123</p>
-            <p>사업자등록번호 | 123-45-67890</p>
-            <p>연락처 | 010-1234-5678</p>
-            <p>운영시간 | 오전 10시 ~ 오후 6시</p>
-          </div>
+        <!-- 오른쪽 영역 -->
+        <div class="footer-right">
+          <h4>온담 펜션</h4>
+          <p>대표자명 | 김온담</p>
+          <p>주소 | 강원도 홍천군 온담로 123</p>
+          <p>사업자등록번호 | 123-45-67890</p>
+          <p>연락처 | 010-1234-5678</p>
+          <p>운영시간 | 오전 10시 ~ 오후 6시</p>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>Copyright©2025 ONDAM All Rights Reserved</p>
+        <p>© 2025 ONDAM. All Rights Reserved.</p>
       </div>
     </footer>
 

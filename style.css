@@ -25,6 +25,8 @@ header {
   background-position: center; /* 중앙 정렬 */
   background-repeat: no-repeat;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* 약한 그림자 효과 */
+
+  z-index: 9999;
 }
 
 header .logo {
@@ -102,41 +104,6 @@ nav a:not(:last-child)::after {
 }
 
 
-/* HERO SECTION */
-#hero {
-  height: 80vh;
-  background: 
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), /* 어둡게 오버레이 */
-    url('img/hero-background.jpg') center center / cover no-repeat;
-  background-size: cover;
-  background-attachment: fixed; /* 스크롤 시 고정 효과 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-  letter-spacing: 2px;
-}
-.hero-content p {
-  margin-top: 10px;
-  font-size: 1.2rem;
-  opacity: 0.9;
-}
-.hero-content button {
-  margin-top: 30px;
-  padding: 12px 26px;
-  background: #fff;
-  color: #2e4639;
-  border: none;
-  border-radius: 4px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
 /* SECTIONS */
 section {
   padding: 120px 10%;
@@ -158,35 +125,7 @@ h2 {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* FOOTER */
-footer {
-  padding: 60px 10%;
-  background: #2e4639;
-  color: #fff;
-  text-align: center;
-}
-footer .sns a {
-  color: #c7e0d1;
-  margin: 0 6px;
-}
 
-/* ANIMATION */
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* 반응형 */
-@media (max-width: 768px) {
-  header { padding: 20px; }
-  .hero-content h1 { font-size: 2.2rem; }
-  .room-gallery img { width: 90%; }
-}
 
 /* ✅ 하단 고정 배너 */
 .bottom-banner {
@@ -235,56 +174,34 @@ footer .sns a {
   background: #e8e8e8;
 }
 
-.footer {
-  background: #1d1d1b;
+/* ✅ 푸터 전체 */
+footer {
+  background-color: #1b1c1a;
   color: #fff;
-  padding: 60px 10%;
+  padding: 50px 10%;
   font-size: 14px;
-  line-height: 1.8;
 }
 
+/* 전체 영역 좌우 정렬 */
 .footer-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* ✅ 왼쪽-오른쪽 간격 확보 */
   align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 40px;
 }
 
+
+/* 왼쪽: 아이콘 + 로고 + 문구 */
 .footer-left {
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
 }
 
-.footer-logo {
-  height: 40px;
-  margin-bottom: 15px;
-  opacity: 0.9;
-}
-
-.footer-slogan {
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1.4;
-  margin-top: 10px;
-}
-
-.footer-info h4 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 40px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 20px;
-  opacity: 0.8;
-}
-
+/* SNS 아이콘 줄 */
 .social-links {
   display: flex;
-  gap: 15px;
-  margin-top: 20px;
+  gap: 14px;
 }
 
 .social-links a {
@@ -294,30 +211,82 @@ footer .sns a {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
   transition: all 0.3s ease;
 }
 
 .social-links a:hover {
   background: #fff;
-  color: #2e4639;
 }
 
+/* 아이콘별 색상 */
 .social-links .youtube:hover {
   color: #ff0000;
 }
-
 .social-links .instagram:hover {
   color: #e1306c;
 }
-
 .social-links .tiktok:hover {
   color: #000000;
 }
-
 .social-links .naver:hover {
   color: #1ec800;
+}
+
+/* 로고 + 슬로건 */
+.footer-logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footer-logo {
+  width: 45px;
+  height: 45px;
+}
+.footer-slogan {
+  color: #e6e6e6;
+  line-height: 1.4;
+  font-size: 15px;
+}
+
+/* 오른쪽 정보 */
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* ✅ 박스는 오른쪽에 유지 */
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ✅ 글자는 왼쪽 정렬되도록 별도 규칙 추가 */
+.footer-right h4,
+.footer-right p {
+  text-align: left; 
+  width: 200px; /* 👈 글자 폭을 강제로 만들어줘야 정렬이 보임 */
+}
+
+/* 하단 카피라이트 */
+.footer-bottom {
+  margin-top: 40px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 12px;
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-right {
+    text-align: center;
+    margin-top: 25px;
+  }
 }
 
