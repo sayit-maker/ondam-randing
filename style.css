@@ -28,17 +28,26 @@ nav {
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 30px;
+  align-items: center;
+  gap: 60px; /* 버튼 간격 넓히기 */
   font-weight: 500;
-  align-items: center; /* 버튼 높이도 딱 맞게 정렬 */
 }
 
-nav .cta {
-  padding: 8px 14px;
-  background: #2e4639;
-  color: #fff;
-  border-radius: 4px;
+nav a {
+  text-decoration: none;
+  color: #2e4639;
+  font-size: 1.1rem;
+  position: relative;
 }
+
+/* ✅ 메뉴 사이 구분선 | 추가 */
+nav a:not(:last-child)::after {
+  content: "|";
+  position: absolute;
+  right: -30px; /* 선의 위치 (간격과 맞춰 조절) */
+  color: rgba(46, 70, 57, 0.4); /* 약간 투명한 초록빛 */
+}
+
 
 
 /* 로고 */
@@ -50,7 +59,7 @@ nav .cta {
 /* HERO SECTION */
 #hero {
   height: 100vh;
-  background: url('img/background.jpg') center top no-repeat;
+  background: url('img/hero-background.jpg') center top no-repeat;
   background-size: cover;
   background-attachment: fixed; /* 스크롤 시 고정 효과 */
   display: flex;
