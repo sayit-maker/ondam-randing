@@ -30,7 +30,16 @@ nav {
   display: flex;
   gap: 30px;
   font-weight: 500;
+  align-items: center; /* 버튼 높이도 딱 맞게 정렬 */
 }
+
+nav .cta {
+  padding: 8px 14px;
+  background: #2e4639;
+  color: #fff;
+  border-radius: 4px;
+}
+
 
 /* 로고 */
 .logo {
