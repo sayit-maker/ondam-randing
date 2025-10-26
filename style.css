@@ -43,13 +43,16 @@ nav .cta {
 /* HERO SECTION */
 #hero {
   height: 100vh;
-  background: url('main.jpg') center/cover no-repeat;
+  background: url('img/background.jpg') center top no-repeat;
+  background-size: cover;
+  background-attachment: fixed; /* 스크롤 시 고정 효과 */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: white;
 }
+
 .hero-content h1 {
   font-size: 3rem;
   letter-spacing: 2px;
