@@ -39,19 +39,44 @@ window.addEventListener('scroll', () => {
   }
 });
 
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper(".swiper", {
   loop: true,
   autoplay: {
     delay: 4000,
     disableOnInteraction: false,
   },
-  effect: 'fade',
   pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
+    el: ".swiper-pagination",
+    type: "progressbar",
   },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+   navigation: {
+     nextEl: ".swiper-button-next",
+     prevEl: ".swiper-button-prev",
+   },
+  on: {
+    slideChange: function () {
+      const fraction = document.querySelector(".swiper-fraction");
+      const total = this.slides.length - 2; // loop mode일 때 가짜 슬라이드 제외
+      fraction.textContent = `${this.realIndex + 1} / ${total}`;
+    },
   },
 });
+
+/* ✅ 재생/일시정지 버튼 */
+const playPauseBtn = document.querySelector(".swiper-play-pause");
+let isPlaying = true;
+
+playPauseBtn.addEventListener("click", () => {
+  if (isPlaying) {
+    swiper.autoplay.stop();
+    playPauseBtn.classList.add("playing");   // ▶️ 재생 이미지로 변경
+  } else {
+    swiper.autoplay.start();
+    playPauseBtn.classList.remove("playing"); // ⏸️ 일시정지 이미지로 변경
+  }
+  isPlaying = !isPlaying;
+});
+
+
+ 
+

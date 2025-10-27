@@ -23,21 +23,21 @@ a {
    🌿 HEADER
 ======================================== */
 header {
-  position: fixed;
+  position: absolute;      /* 고정 대신 절대 위치로 변경 */
   top: 0;
   left: 0;
   width: 100%;
   height: 80px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 10%;
-  background-image: url("img/header-bg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  z-index: 9999;
+
+  background: transparent; /* ✅ 완전 투명화 */
+  box-shadow: none;        /* ✅ 그림자 제거 */
+
+  z-index: 10;             /* 슬라이드 위에만 떠 있도록 */
 }
 
 /* 로고 */
@@ -57,17 +57,15 @@ header .logo img {
 
 /* 메뉴(nav) */
 nav {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  flex: 1;
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 60px;
   font-weight: 500;
 }
 
 nav a {
-  text-decoration: none;
   color: #2e4639;
   font-size: 1.1rem;
   position: relative;
@@ -84,6 +82,44 @@ nav a:not(:last-child)::after {
   position: absolute;
   right: -30px;
   color: rgba(46, 70, 57, 0.4);
+}
+
+/* ========================================
+   🌊 HERO / SWIPER 슬라이드
+======================================== */
+.swiper {
+  width: 100%;
+  height: 100vh;  /* ✅ 화면 전체 */
+  margin-top: 0;  /* ✅ 헤더 밑으로 밀리지 않게 */
+}
+
+.swiper-slide {
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  color: #fff;
+  background: none; /* ✅ 가독성 향상 */
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.text-box h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.text-box p {
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
 /* ========================================
@@ -107,108 +143,8 @@ h2 {
 #pricing { background-color: #d8e1dc; }
 
 /* ========================================
-   💬 하단 고정 배너 (Bottom Banner)
+   🌤 온담 소개 섹션
 ======================================== */
-.bottom-banner {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  max-width: 1100px;
-  background: rgba(46, 70, 57, 0.9);
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-  z-index: 9999;
-  backdrop-filter: blur(4px);
-  opacity: 1;
-  transition: opacity 0.6s ease; /* ✅ 천천히 사라짐 */
-}
-
-.bottom-banner p {
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.bottom-banner span {
-  opacity: 0.8;
-  margin-left: 5px;
-}
-
-.bottom-banner .cta-btn {
-  background: #fff;
-  color: #2e4639;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.bottom-banner .cta-btn:hover {
-  background: #e8e8e8;
-}
-
-/* ========================================
-   🧭 FOOTER
-======================================== */
-footer {
-  background-color: #1b1c1a;
-  color: #fff;
-  padding: 50px 10%;
-  font-size: 14px;
-}
-
-/* 구조 정렬 */
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-/* 왼쪽: 로고 + SNS */
-.footer-left {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
-}
-
-.social-links {
-  display: flex;
-  gap: 14px;
-}
-
-.social-links a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff;
-  font-size: 16px;
-  transition: all 0.3s ease;
-}
-
-.social-links a:hover { background: #fff; }
-.social-links .youtube:hover { color: #ff0000; }
-.social-links .instagram:hover { color: #e1306c; }
-.social-links .tiktok:hover { color: #000; }
-.social-links .naver:hover {
-  color: #1ec800;
-}
-
-
-/* 온담 소개 섹션 스타일 */
 #about {
   background: linear-gradient(to bottom, #f9faf9, #edf2ee);
   padding: 140px 10%;
@@ -254,8 +190,10 @@ footer {
   font-weight: 700;
   color: #1b3024;
   background: linear-gradient(90deg, #2e4639 0%, #486e57 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+ background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
 }
 
 #about .logo-img {
@@ -279,18 +217,221 @@ footer {
   background-color: #486e57;
 }
 
-.swiper {
-  width: 100%;
-  height: 100vh;
+/* ========================================
+   💬 하단 고정 배너
+======================================== */
+.bottom-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1100px;
+  background: rgba(46, 70, 57, 0.9);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  z-index: 9999;
+  backdrop-filter: blur(4px);
+  opacity: 1;
+  transition: opacity 0.6s ease;
 }
-.swiper-slide {
-  background-size: cover;
-  background-position: center;
-  position: relative;
+
+.bottom-banner.hide {
+  opacity: 0; /* ✅ JS로 사라짐 제어 */
+  pointer-events: none;
 }
-.text-box {
+
+.bottom-banner p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.bottom-banner span {
+  opacity: 0.8;
+  margin-left: 5px;
+}
+
+.bottom-banner .cta-btn {
+  background: #fff;
+  color: #2e4639;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.bottom-banner .cta-btn:hover {
+  background: #e8e8e8;
+}
+
+/* ========================================
+   🧭 FOOTER
+======================================== */
+footer {
+  background-color: #1b1c1a;
+  color: #fff;
+  padding: 50px 10%;
+  font-size: 14px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.social-links {
+  display: flex;
+  gap: 14px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover { background: #fff; }
+.social-links .youtube:hover { color: #ff0000; }
+.social-links .instagram:hover { color: #e1306c; }
+.social-links .tiktok:hover { color: #000; }
+.social-links .naver:hover { color: #1ec800; }
+
+/* ========================================
+   📱 반응형
+======================================== */
+@media (max-width: 768px) {
+  header {
+    padding: 0 5%;
+  }
+
+  nav {
+    gap: 30px;
+  }
+
+  .text-box {
+    left: 5%;
+    right: 5%;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .bottom-banner {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+/* ========================================
+   🎯 Swiper 컨트롤 수평 정렬 확정 버전
+======================================== */
+
+/* Swiper 기본 위치 속성 제거 */
+.swiper-button-prev,
+.swiper-button-next {
+  position: static !important;  /* ✅ absolute 해제 */
+  top: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+  margin: 0 !important;
+}
+
+/* 수평 정렬 컨테이너 */
+.swiper-controls {
   position: absolute;
-  top: 40%;
-  left: 10%;
-  color: white;
+  bottom: 60px;                 /* 전체 위치 조정 */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;          /* ✅ 수직 중심 맞춤 */
+  justify-content: center;
+  gap: 10px;                    /* 간격 조정 */
+  z-index: 100;
+}
+
+/* 버튼 공통 스타일 */
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-play-pause {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Swiper 기본 아이콘 제거 */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: none !important;
+}
+
+/* 커스텀 화살표 이미지 */
+.swiper-button-prev {
+  width: 56px !important;
+  height: 56px !important;
+  background: url("img/prev.png") center/contain no-repeat !important;
+}
+
+.swiper-button-next {
+  width: 56px !important;
+  height: 56px !important;
+  background: url("img/next.png") center/contain no-repeat !important;
+}
+
+/* 일시정지 / 재생 버튼 */
+.swiper-play-pause {
+  width: 48px !important;
+  height: 48px !important;
+  background: url("img/pause.png") center/contain no-repeat !important;
+  text-indent: -9999px;
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 4px;
+}
+.swiper-play-pause.playing {
+  background-image: url("img/play.png") !important;
+}
+
+/* 진행바 (Progressbar) */
+.swiper-pagination {
+  position: static !important;
+  width: 100px !important;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.swiper-pagination-progressbar-fill {
+  background: #fff !important;
+}
+
+/* 슬라이드 개수 표시 */
+.swiper-fraction {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  min-width: 50px;
+  text-align: center;
 }

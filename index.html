@@ -6,6 +6,10 @@
     <title>온담 펜션 | 따뜻함을 담다</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/png" href="img/favicon1.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <!-- 🔝 HEADER -->
@@ -25,24 +29,40 @@
     <!-- Swiper Container -->
     <div class="swiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" style="background-image: url('img1.jpg')">
+        <!-- ✅ 첫 번째 슬라이드 -->
+        <div
+          class="swiper-slide"
+          style="background-image: url('img/room1.jpg')"
+        >
           <div class="text-box">
             <h2>Bonus Journey : Upgrade Your Stay</h2>
             <p>
-              당신의 여행을 보다 여유롭고 품격 있게<br />잊지 못할 하루를 위한
-              최선의 선택
+              당신의 여행을 보다 여유롭고 품격 있게<br />
+              잊지 못할 하루를 위한 최선의 선택
             </p>
           </div>
         </div>
-        <div class="swiper-slide" style="background-image: url('img2.jpg')">
-          <div class="text-box">...</div>
+
+        <!-- ✅ 두 번째 슬라이드 -->
+        <div
+          class="swiper-slide"
+          style="background-image: url('img/room2.jpg')"
+        >
+          <div class="text-box">
+            <h2>Another Story : Rest and Warmth</h2>
+            <p>따뜻한 쉼과 온기가 함께하는 공간, 온담</p>
+          </div>
         </div>
       </div>
 
-      <!-- Pagination / Controls -->
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+      <!-- ✅ pagination은 그대로 유지 -->
+      <div class="swiper-controls">
+        <div class="swiper-pagination"></div>
+        <div class="swiper-fraction">1 / 2</div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-play-pause"></div>
+        <div class="swiper-button-next"></div>
+      </div>
     </div>
 
     <!-- 🌿 SECTION 1: 브랜딩 / 온담소개 / 위치 -->
@@ -176,6 +196,8 @@
       </p>
       <button class="cta-btn">지금 예약하기</button>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
 
     <script src="script.js"></script>
   </body>
