@@ -23,21 +23,35 @@ function showOnScroll() {
 window.addEventListener('scroll', showOnScroll);
 window.addEventListener('load', showOnScroll);
 
+const header = document.querySelector('header');
+const footer = document.querySelector('footer');
 const bottomBanner = document.querySelector('.bottom-banner');
-const footer = document.querySelector('.footer');
 
 window.addEventListener('scroll', () => {
+  const headerBottom = header.offsetTop + header.offsetHeight;
   const footerTop = footer.getBoundingClientRect().top;
+  const scrollY = window.scrollY;
   const windowHeight = window.innerHeight;
 
-  if (footerTop < windowHeight) {
-    bottomBanner.style.opacity = '0';
-    bottomBanner.style.pointerEvents = 'none';
-  } else {
+  // ✅ 헤더 아래로 내려왔을 때 배너 등장
+  if (scrollY > headerBottom) {
+    bottomBanner.classList.add('show');
     bottomBanner.style.opacity = '1';
     bottomBanner.style.pointerEvents = 'auto';
+  } else {
+    bottomBanner.classList.remove('show');
+    bottomBanner.style.opacity = '0';
+    bottomBanner.style.pointerEvents = 'none';
+  }
+
+  // ✅ 푸터가 보이면 배너 사라짐
+  if (footerTop < windowHeight) {
+    bottomBanner.classList.remove('show');
+    bottomBanner.style.opacity = '0';
+    bottomBanner.style.pointerEvents = 'none';
   }
 });
+
 
 const swiper = new Swiper(".swiper", {
   loop: true,

@@ -435,3 +435,29 @@ footer {
   min-width: 50px;
   text-align: center;
 }
+
+/* ========================================
+   📱 모바일 전용 하단 배너 최적화
+======================================== */
+@media (max-width: 768px) {
+  .bottom-banner {
+    bottom: 12px;                     /* ✅ 살짝 위로 올림 */
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    width: 95%;                       /* ✅ 화면 거의 꽉 채우게 */
+    padding: 14px 20px;               /* ✅ 여백 축소 */
+    font-size: 14px;                  /* ✅ 텍스트 살짝 작게 */
+    border-radius: 8px;               /* ✅ 둥근 모서리 조정 */
+  }
+
+  .bottom-banner p {
+    margin: 0;
+    line-height: 1.4;
+    text-align: center;               /* ✅ 중앙 정렬 (모바일에선 좌우 좁으니까) */
+  }
+
+  .bottom-banner .cta-btn {
+    padding: 8px 16px;                /* ✅ 버튼 크기 축소 */
+    font-size: 14px;
+  }
+}
